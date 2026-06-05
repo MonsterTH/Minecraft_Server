@@ -9,6 +9,7 @@
         "php": "^8.3",
         "laravel/framework": "^13.8",
         "laravel/tinker": "^3.0",
+        "livewire/livewire": "^4.3",
         "thedudeguy/rcon": "^1.0",
         "xpaw/php-minecraft-query": "^5.0"
     },

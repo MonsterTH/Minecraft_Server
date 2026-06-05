@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Minecraft Status</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
     <h1>Minecraft Server Status</h1>
 
     @if($status['online'])
@@ -26,5 +22,4 @@
         <p>🔴 Server offline</p>
         <p>{{ $status['error'] ?? 'Unknown error' }}</p>
     @endif
-</body>
-</html>
+@endsection

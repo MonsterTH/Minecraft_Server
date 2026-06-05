@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Minecraft Panel</title>
-</head>
-<body>
-
+@extends('layouts.app')
+@section('content')
+    <livewire:dashboard />
     <h1>🔥 Minecraft Panel</h1>
 
     <!-- STATUS BOX -->
@@ -44,6 +40,4 @@
             <pre>{{ session('response') }}</pre>
         @endif
     </div>
-
-</body>
-</html>
+@endsection

@@ -1,0 +1,52 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:coal": 5,
+      "minecraft:oak_log": 9,
+      "minecraft:firefly_bush": 2,
+      "minecraft:cobblestone": 13,
+      "minecraft:oak_sapling": 1
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 3,
+      "minecraft:time_since_rest": 256,
+      "minecraft:walk_one_cm": 8590,
+      "minecraft:leave_game": 3,
+      "minecraft:walk_under_water_one_cm": 46,
+      "minecraft:damage_taken": 250,
+      "minecraft:play_time": 14474,
+      "minecraft:jump": 185,
+      "minecraft:time_since_death": 0,
+      "minecraft:sprint_one_cm": 29758,
+      "minecraft:fall_one_cm": 8695,
+      "minecraft:swim_one_cm": 784,
+      "minecraft:total_world_time": 14474,
+      "minecraft:fly_one_cm": 39996,
+      "minecraft:walk_on_water_one_cm": 672,
+      "minecraft:crouch_one_cm": 237,
+      "minecraft:sneak_time": 130,
+      "minecraft:deaths": 2
+    },
+    "minecraft:crafted": {
+      "minecraft:stick": 8,
+      "minecraft:torch": 8,
+      "minecraft:wooden_pickaxe": 2,
+      "minecraft:oak_planks": 36,
+      "minecraft:crafting_table": 3
+    },
+    "minecraft:used": {
+      "minecraft:crafting_table": 2,
+      "minecraft:firefly_bush": 1,
+      "minecraft:wooden_pickaxe": 20,
+      "minecraft:torch": 1
+    },
+    "minecraft:mined": {
+      "minecraft:firefly_bush": 2,
+      "minecraft:oak_leaves": 10,
+      "minecraft:oak_log": 9,
+      "minecraft:coal_ore": 5,
+      "minecraft:stone": 15
+    }
+  },
+  "DataVersion": 4790
+}

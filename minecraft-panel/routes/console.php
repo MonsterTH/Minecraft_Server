@@ -1,13 +1,10 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schedule;
+use App\Services\LogParser;
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
-
-Schedule::command('minecraft:parse-logs')
-    ->everyMinute()
-    ->withoutOverlapping();
+Schedule::call(function () {
+    app(LogParser::class)->parse(
+        storage_path('logs/latest.log')
+    );
+})->everyMinute()->name('parse-minecraft-logs');

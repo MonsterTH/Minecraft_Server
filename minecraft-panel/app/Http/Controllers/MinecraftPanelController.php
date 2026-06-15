@@ -3,40 +3,57 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Services\MinecraftQueryService;
-use Thedudeguy\Rcon;
-use App\Models\AdminAction;
+use App\Services\RconService;
+use App\Models\AuditLog;
 
 class MinecraftPanelController extends Controller
 {
-    public function index(MinecraftQueryService $query)
+    // ✅ Allow-list de comandos seguros
+    private array $allowedCommands = [
+        'broadcast'       => 'say %s',
+        'kick'            => 'kick %s %s',
+        'whitelist_add'   => 'whitelist add %s',
+        'whitelist_remove'=> 'whitelist remove %s',
+    ];
+
+    public function sendCommand(Request $request, RconService $rcon)
     {
-        $status = $query->getStatus();
+        $type = $request->input('command_type');
 
-        return view('panel', compact('status'));
-    }
-
-    public function command(Request $request)
-    {
-        $request->validate([
-            'command' => 'required|string'
-        ]);
-
-        $rcon = new \Thedudeguy\Rcon('172.17.0.1', 25575, 'secret', 3);
-
-        $response = null;
-
-        if ($rcon->connect()) {
-            $response = $rcon->sendCommand($request->command);
+        if (!array_key_exists($type, $this->allowedCommands)) {
+            return back()->with('error', 'Command not allowed.');
         }
 
-        AdminAction::create([
-            'action' => 'rcon_command',
-            'params' => $request->command,
-            'source' => 'web',
-            'result' => $response,
+        $command = match($type) {
+            'broadcast'        => sprintf($this->allowedCommands[$type],
+                                    $request->input('message')),
+            'kick'             => sprintf($this->allowedCommands[$type],
+                                    $request->input('player'),
+                                    $request->input('reason', 'Kicked by admin')),
+            'whitelist_add',
+            'whitelist_remove' => sprintf($this->allowedCommands[$type],
+                                    $request->input('player')),
+        };
+
+        $response = $rcon->send($command);
+
+        // ✅ Audit log
+        AuditLog::create([
+            'admin_id'   => auth()->id(),
+            'action'     => $type,
+            'payload'    => $request->except(['_token']),
+            'response'   => $response,
         ]);
 
-        return back()->with('response', $response);
+        return back()->with('response', $response)->with('success', 'Command sent.');
+    }
+
+    public function refreshLogs()
+    {
+        app(\App\Services\LogParser::class)->parse(
+            storage_path('logs/latest.log')
+        );
+
+        return back()->with('success', 'Logs refreshed.');
     }
 }

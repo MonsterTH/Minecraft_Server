@@ -1,31 +1,58 @@
-[17:15:09] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[17:15:13] [ServerMain/INFO]: Loaded 1515 recipes
-[17:15:13] [ServerMain/INFO]: Loaded 1617 advancements
-[17:15:13] [Server thread/INFO]: Starting minecraft server version 26.1.2
-[17:15:13] [Server thread/INFO]: Loading properties
-[17:15:13] [Server thread/INFO]: Default game type: SURVIVAL
-[17:15:13] [Server thread/INFO]: Generating keypair
-[17:15:13] [Server thread/INFO]: Starting Minecraft server on *:25565
-[17:15:14] [Server thread/INFO]: Preparing level "world"
-[17:15:14] [Server thread/INFO]: Loading 0 persistent chunks...
-[17:15:14] [Server thread/INFO]: Preparing spawn area: 100%
-[17:15:14] [Server thread/INFO]: Time elapsed: 12 ms
-[17:15:14] [Server thread/INFO]: Done (0.535s)! For help, type "help"
-[17:15:14] [Server thread/INFO]: Starting GS4 status listener
-[17:15:14] [Server thread/INFO]: Thread Query Listener started
-[17:15:14] [Server thread/INFO]: Starting remote control listener
-[17:15:14] [Query Listener #1/INFO]: Query running on 0.0.0.0:25565
-[17:15:14] [Server thread/INFO]: Thread RCON Listener started
-[17:15:14] [Server thread/INFO]: RCON running on 0.0.0.0:25575
-[17:15:14] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[17:15:14] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[17:15:14] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[17:15:14] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[17:15:14] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[17:15:14] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[17:15:14] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[17:15:15] [User Authenticator #1/INFO]: UUID of player OakLogGuy is 4bf41d67-fee6-4052-8e75-98252e31253f
-[17:15:19] [Server thread/INFO]: OakLogGuy[/192.168.251.119:55183] logged in with entity id 39 at (-16.611286028853247, 71.0, 0.3772980729447892)
-[17:15:20] [Server thread/INFO]: OakLogGuy joined the game
-[17:15:41] [Server thread/INFO]: OakLogGuy lost connection: Disconnected
-[17:15:41] [Server thread/INFO]: OakLogGuy left the game
+[16:07:38] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[16:07:44] [ServerMain/INFO]: Loaded 1515 recipes
+[16:07:44] [ServerMain/INFO]: Loaded 1617 advancements
+[16:07:44] [Server thread/INFO]: Starting minecraft server version 26.1.2
+[16:07:44] [Server thread/INFO]: Loading properties
+[16:07:44] [Server thread/INFO]: Default game type: SURVIVAL
+[16:07:44] [Server thread/INFO]: Generating keypair
+[16:07:45] [Server thread/INFO]: Starting Minecraft server on *:25565
+[16:07:45] [Server thread/INFO]: Preparing level "world"
+[16:07:46] [Server thread/INFO]: Loading 0 persistent chunks...
+[16:07:46] [Server thread/INFO]: Preparing spawn area: 100%
+[16:07:46] [Server thread/INFO]: Time elapsed: 39 ms
+[16:07:46] [Server thread/INFO]: Done (1.311s)! For help, type "help"
+[16:07:46] [Server thread/INFO]: Starting GS4 status listener
+[16:07:46] [Server thread/INFO]: Thread Query Listener started
+[16:07:46] [Server thread/INFO]: Starting remote control listener
+[16:07:46] [Query Listener #1/INFO]: Query running on 0.0.0.0:25565
+[16:07:46] [Server thread/INFO]: Thread RCON Listener started
+[16:07:46] [Server thread/INFO]: RCON running on 0.0.0.0:25575
+[16:07:46] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[16:07:47] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[16:07:47] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[16:07:47] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[16:07:47] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[16:07:47] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[16:07:47] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[16:09:12] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
+[16:09:12] [Server thread/INFO]: [Not Secure] [Rcon] Banana
+[16:09:12] [RCON Client /172.19.0.4 #3/INFO]: Thread RCON Client /172.19.0.4 shutting down
+[16:09:38] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
+[16:09:38] [RCON Client /172.19.0.4 #4/INFO]: Thread RCON Client /172.19.0.4 shutting down
+[16:11:42] [User Authenticator #1/INFO]: UUID of player OakLogGuy is 4bf41d67-fee6-4052-8e75-98252e31253f
+[16:11:45] [Server thread/INFO]: OakLogGuy[/192.168.251.119:58043] logged in with entity id 66 at (-16.30000001192093, 71.0, 8.699999988079071)
+[16:11:45] [Server thread/INFO]: OakLogGuy joined the game
+[16:12:27] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
+[16:12:27] [RCON Client /172.19.0.4 #5/INFO]: Thread RCON Client /172.19.0.4 shutting down
+[16:12:38] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
+[16:12:38] [Server thread/INFO]: [Rcon: Added OakLogGuy to the whitelist]
+[16:12:38] [RCON Client /172.19.0.4 #6/INFO]: Thread RCON Client /172.19.0.4 shutting down
+[16:12:46] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
+[16:12:46] [Server thread/INFO]: [Rcon: Removed OakLogGuy from the whitelist]
+[16:12:46] [RCON Client /172.19.0.4 #7/INFO]: Thread RCON Client /172.19.0.4 shutting down
+[16:12:52] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
+[16:12:52] [RCON Client /172.19.0.4 #8/INFO]: Thread RCON Client /172.19.0.4 shutting down
+[16:13:03] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
+[16:13:03] [Server thread/INFO]: [Rcon: Kicked OakLogGuy: is gay]
+[16:13:03] [RCON Client /172.19.0.4 #9/INFO]: Thread RCON Client /172.19.0.4 shutting down
+[16:13:03] [Server thread/INFO]: OakLogGuy lost connection: is gay
+[16:13:03] [Server thread/INFO]: OakLogGuy left the game
+[16:13:23] [User Authenticator #2/INFO]: UUID of player OakLogGuy is 4bf41d67-fee6-4052-8e75-98252e31253f
+[16:13:23] [Server thread/INFO]: OakLogGuy[/192.168.251.119:58059] logged in with entity id 591 at (-3.9150991934709114, 70.0, 5.228068680277222)
+[16:13:23] [Server thread/INFO]: OakLogGuy joined the game
+[16:13:29] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
+[16:13:29] [Server thread/INFO]: [Not Secure] [Rcon] horobrine
+[16:13:29] [RCON Client /172.19.0.4 #10/INFO]: Thread RCON Client /172.19.0.4 shutting down
+[16:14:02] [Server thread/INFO]: <OakLogGuy> hgfcdx
+[16:14:47] [Server thread/INFO]: OakLogGuy lost connection: Disconnected
+[16:14:47] [Server thread/INFO]: OakLogGuy left the game

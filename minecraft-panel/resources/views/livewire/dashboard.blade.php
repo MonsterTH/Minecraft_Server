@@ -1,5 +1,5 @@
 {{-- resources/views/livewire/dashboard.blade.php --}}
-<div wire:poll.5s>
+<div wire:poll.1s>
 
     @forelse($chatFeed as $msg)
         <div class="flex items-start gap-3 py-2 border-b border-border last:border-0">

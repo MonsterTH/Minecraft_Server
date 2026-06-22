@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('action');
             $table->json('payload')->nullable();
             $table->text('response')->nullable();
+            $table->string('source')->default('panel');
             $table->timestamps();
         });
     }

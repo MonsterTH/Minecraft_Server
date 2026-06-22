@@ -10,10 +10,8 @@ if [ ! -d "vendor" ]; then
     composer install --no-interaction --prefer-dist
 fi
 
-php artisan key:generate --force
 php artisan optimize:clear
 php artisan migrate --force
-php artisan db:seed --force
 
 touch /var/log/cron.log
 chmod 666 /var/log/cron.log

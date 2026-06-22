@@ -56,4 +56,9 @@ class MinecraftPanelController extends Controller
 
         return back()->with('success', 'Logs refreshed.');
     }
+
+    public function admin()
+    {
+        return view('admin');
+    }
 }

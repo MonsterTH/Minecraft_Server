@@ -75,6 +75,11 @@
                 <span>📋</span> Audit Log
             </a>
 
+        <form method="POST" action="/logout">
+            @csrf
+            <button class="text-sm text-red-400">Logout</button>
+        </form>
+
         </nav>
 
         <!-- Server status badge -->
@@ -118,7 +123,6 @@
         @endif
 
         @yield('content')
-
     </main>
 
     @livewireScripts

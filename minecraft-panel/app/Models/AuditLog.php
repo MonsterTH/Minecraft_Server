@@ -11,6 +11,7 @@ class AuditLog extends Model
         'action',
         'payload',
         'response',
+        'source', // ✅ 'panel' ou 'ai'
     ];
 
     protected $casts = [
@@ -20,5 +21,15 @@ class AuditLog extends Model
     public function admin()
     {
         return $this->belongsTo(User::class, 'admin_id');
+    }
+
+    public function scopeFromAi($query)
+    {
+        return $query->where('source', 'ai');
+    }
+
+    public function scopeFromPanel($query)
+    {
+        return $query->where('source', 'panel');
     }
 }

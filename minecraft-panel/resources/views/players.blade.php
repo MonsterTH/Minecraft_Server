@@ -12,7 +12,7 @@
         <p class="text-xs text-muted mb-1">Players Online</p>
 
         <p class="text-2xl font-bold text-white">
-            {{ $onlinePlayers->count() }}
+            {{ $status['players_online'] ?? 0 }}
         </p>
     </div>
 

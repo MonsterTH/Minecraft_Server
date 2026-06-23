@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="block text-xs text-muted mb-1">Reason (optional)</label>
+                    <label class="block text-xs text-muted mb-1">Reason</label>
                     <input
                         type="text"
                         name="reason"
@@ -128,6 +128,41 @@
                     Remove from Whitelist
                 </button>
             </form>
+        </div>
+
+        <!-- RAW RCON CONSOLE -->
+        <div class="mt-6 bg-card border border-border rounded-xl p-5">
+
+            <h2 class="text-sm font-semibold text-white mb-4">
+                ⚙️ Raw RCON Console
+            </h2>
+
+            <form method="POST" action="/panel/command">
+                @csrf
+
+                <!-- diz ao backend que é modo direto -->
+                <input type="hidden" name="command_type" value="raw">
+
+                <div class="mb-3">
+                    <label class="block text-xs text-muted mb-1">Command</label>
+
+                    <input
+                        type="text"
+                        name="command"
+                        placeholder="say Hello / time set day / ban Steve"
+                        class="w-full bg-dark border border-border rounded-lg px-3 py-2 text-sm text-white
+                            placeholder:text-muted focus:outline-none focus:border-accent"
+                        required
+                    >
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold
+                        py-2 rounded-lg transition">
+                    Send RCON Command
+                </button>
+            </form>
+
         </div>
 
     </div>

@@ -137,7 +137,7 @@
 
                     <span class="text-xs text-muted">
 
-                        {{ $message->created_at->diffForHumans() }}
+                        {{ $message->event_time->diffForHumans() }}
 
                     </span>
 
@@ -164,46 +164,6 @@
     </div>
 
 </div>
-
-    <!-- RCON COMMAND BOX -->
-    <div class="bg-card border border-border rounded-xl p-4 mt-6">
-
-        <h2 class="text-sm font-semibold text-white mb-4">
-            ⚙️ Send Command (RCON)
-        </h2>
-
-        <form method="POST" action="/panel/command" class="flex flex-col md:flex-row gap-3">
-            @csrf
-
-            <input
-                type="text"
-                name="command"
-                placeholder="say Hello"
-                class="flex-1 bg-dark border border-border rounded-lg px-3 py-2
-                    text-sm text-white placeholder:text-muted
-                    focus:outline-none focus:border-accent"
-            >
-
-            <button
-                type="submit"
-                class="bg-accent hover:bg-accent-hover
-                    px-5 py-2 rounded-lg text-sm font-semibold text-white"
-            >
-                Send
-            </button>
-        </form>
-
-        @if(session('response'))
-            <div class="mt-4 border-t border-border pt-3">
-                <p class="text-xs text-muted mb-2">Response</p>
-
-                <pre class="text-sm text-green-400 whitespace-pre-wrap">
-    {{ session('response') }}
-                </pre>
-            </div>
-        @endif
-
-    </div>
 
 <!-- LIVEWIRE -->
 

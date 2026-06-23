@@ -29,6 +29,46 @@
       "minecraft:birch_stairs": 44,
       "minecraft:crafting_table": 4
     },
+    "minecraft:mined": {
+      "minecraft:short_grass": 3,
+      "minecraft:firefly_bush": 2,
+      "minecraft:birch_sapling": 1,
+      "minecraft:oak_leaves": 19,
+      "minecraft:birch_stairs": 4,
+      "minecraft:birch_log": 19,
+      "minecraft:leaf_litter": 4,
+      "minecraft:oak_log": 33,
+      "minecraft:coal_ore": 5,
+      "minecraft:oak_sapling": 1,
+      "minecraft:stone": 15
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 11,
+      "minecraft:time_since_rest": 13153,
+      "minecraft:walk_one_cm": 52908,
+      "minecraft:leave_game": 17,
+      "minecraft:walk_under_water_one_cm": 46,
+      "minecraft:mob_kills": 2,
+      "minecraft:damage_taken": 630,
+      "minecraft:play_time": 47971,
+      "minecraft:damage_dealt": 258,
+      "minecraft:jump": 251,
+      "minecraft:time_since_death": 13110,
+      "minecraft:sprint_one_cm": 47661,
+      "minecraft:open_chest": 1,
+      "minecraft:fall_one_cm": 10095,
+      "minecraft:total_world_time": 47971,
+      "minecraft:swim_one_cm": 784,
+      "minecraft:fly_one_cm": 43806,
+      "minecraft:walk_on_water_one_cm": 672,
+      "minecraft:crouch_one_cm": 1912,
+      "minecraft:sneak_time": 655,
+      "minecraft:deaths": 3
+    },
+    "minecraft:killed": {
+      "minecraft:zombie": 1,
+      "minecraft:spider": 1
+    },
     "minecraft:picked_up": {
       "minecraft:birch_sapling": 7,
       "minecraft:stick": 10,
@@ -45,45 +85,6 @@
       "minecraft:wheat_seeds": 2,
       "minecraft:oak_door": 1,
       "minecraft:birch_stairs": 4
-    },
-    "minecraft:killed": {
-      "minecraft:zombie": 1
-    },
-    "minecraft:custom": {
-      "minecraft:interact_with_crafting_table": 11,
-      "minecraft:time_since_rest": 6064,
-      "minecraft:walk_one_cm": 52071,
-      "minecraft:leave_game": 12,
-      "minecraft:walk_under_water_one_cm": 46,
-      "minecraft:mob_kills": 1,
-      "minecraft:damage_taken": 450,
-      "minecraft:play_time": 40882,
-      "minecraft:damage_dealt": 100,
-      "minecraft:jump": 251,
-      "minecraft:time_since_death": 6021,
-      "minecraft:sprint_one_cm": 47661,
-      "minecraft:open_chest": 1,
-      "minecraft:fall_one_cm": 10095,
-      "minecraft:total_world_time": 40882,
-      "minecraft:swim_one_cm": 784,
-      "minecraft:fly_one_cm": 43777,
-      "minecraft:walk_on_water_one_cm": 672,
-      "minecraft:crouch_one_cm": 1912,
-      "minecraft:sneak_time": 655,
-      "minecraft:deaths": 3
-    },
-    "minecraft:mined": {
-      "minecraft:short_grass": 3,
-      "minecraft:firefly_bush": 2,
-      "minecraft:birch_sapling": 1,
-      "minecraft:oak_leaves": 19,
-      "minecraft:birch_stairs": 4,
-      "minecraft:birch_log": 19,
-      "minecraft:leaf_litter": 4,
-      "minecraft:oak_log": 33,
-      "minecraft:coal_ore": 5,
-      "minecraft:oak_sapling": 1,
-      "minecraft:stone": 15
     }
   },
   "DataVersion": 4790

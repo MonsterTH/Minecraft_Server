@@ -1,0 +1,4 @@
+name: MinecraftDataBridge
+version: 1.0
+main: com.mcbridge.Main
+api-version: '1.21'

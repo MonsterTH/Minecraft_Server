@@ -8,7 +8,7 @@
 
         <div class="bg-card border border-border rounded-xl p-4">
             <p class="text-xs text-muted mb-1">Players Online</p>
-            <p class="text-2xl font-bold text-white">{{ $status['players_online'] ?? 0}}</p>
+            <p class="text-2xl font-bold text-white">{{ $status['players_online'] ?? 0 }}</p>
         </div>
 
         <div class="bg-card border border-border rounded-xl p-4">
@@ -29,7 +29,7 @@
         @else
             <div class="bg-card border border-border rounded-xl p-4">
                 <p class="text-xs text-muted mb-1">Server Status</p>
-                <p class="text-2xl font-bold text-green-400">🔴 Offline</p>
+                <p class="text-2xl font-bold text-red-400">🔴 Offline</p>
             </div>
         @endif
     </div>
@@ -43,7 +43,7 @@
                 👥 Players Online
             </h2>
 
-            @forelse($status['player_list'] as $player)
+            @forelse($status['player_list'] ?? [] as $player)
 
                 <div class="flex items-center gap-3 py-2 border-b border-border">
                     <span class="w-2 h-2 rounded-full bg-green-400"></span>

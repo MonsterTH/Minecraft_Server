@@ -11,13 +11,11 @@ class DashboardController extends Controller
     {
         $status = $query->getStatus();
 
-        $onlinePlayers = ServerEvent::where('event_type', 'join')
-            ->whereNotIn('player_name', function ($q) {
-                $q->select('player_name')
-                ->from('server_events')
-                ->where('event_type', 'leave');
-            })
-            ->get();
+        $onlinePlayers = $this->getOnlinePlayers();
+
+        $joinsToday = ServerEvent::where('event_type', 'join')
+            ->whereDate('event_time', today())
+            ->count();
 
         $joinsToday = ServerEvent::where('event_type', 'join')
             ->whereDate('event_time', today())
@@ -42,8 +40,22 @@ class DashboardController extends Controller
             'topPlayers',
             'status'
         ));
+    }
 
+    public function getOnlinePlayers()
+    {
+        // Para cada jogador, pega o último evento (join ou leave)
+        $latestEvents = ServerEvent::whereIn('event_type', ['join', 'leave'])
+            ->whereIn('id', function ($q) {
+                $q->selectRaw('MAX(id)')
+                    ->from('server_events')
+                    ->whereIn('event_type', ['join', 'leave'])
+                    ->groupBy('player_name');
+            })
+            ->get();
 
+        // Só estão online os que o ÚLTIMO evento foi 'join'
+        return $latestEvents->where('event_type', 'join');
     }
 
     // players() e chat() para as rotas da sidebar

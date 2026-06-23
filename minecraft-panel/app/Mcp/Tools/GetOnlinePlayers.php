@@ -16,17 +16,18 @@ class GetOnlinePlayers extends Tool
 {
     public function handle(Request $request): Response
     {
-        $onlinePlayers = ServerEvent::where('event_type', 'join')
-            ->whereNotIn('player_name', function ($q) {
-                $q->select('player_name')
+        $latestEvents = ServerEvent::whereIn('event_type', ['join', 'leave'])
+            ->whereIn('id', function ($q) {
+                $q->selectRaw('MAX(id)')
                     ->from('server_events')
-                    ->where('event_type', 'leave');
+                    ->whereIn('event_type', ['join', 'leave'])
+                    ->groupBy('player_name');
             })
-            ->get(['player_name', 'event_time']);
+            ->get();
 
         return Response::json([
-            'count'   => $onlinePlayers->count(),
-            'players' => $onlinePlayers->map(fn ($p) => [
+            'count'   => $latestEvents->count(),
+            'players' => $latestEvents->map(fn ($p) => [
                 'name'       => $p->player_name,
                 'joined_at'  => $p->event_time,
             ]),

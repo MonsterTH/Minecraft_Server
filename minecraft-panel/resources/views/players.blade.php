@@ -80,11 +80,7 @@
 
                 <th class="p-4">Deaths</th>
 
-                <th class="p-4">Advancements</th>
-
-                <th class="p-4">Playtime</th>
-
-                <th class="p-4">Last Seen</th>
+                <th class="p-4">Achievements</th>
 
             </tr>
 

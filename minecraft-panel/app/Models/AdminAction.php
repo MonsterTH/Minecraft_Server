@@ -6,12 +6,30 @@ use Illuminate\Database\Eloquent\Model;
 
 class AdminAction extends Model
 {
-    protected $table = 'admin_actions';
-
     protected $fillable = [
+        'admin_id',
         'action',
-        'params',
-        'source',
-        'result',
+        'payload',
+        'response',
+        'source', // ✅ 'panel' ou 'ai'
     ];
+
+    protected $casts = [
+        'payload' => 'array',
+    ];
+
+    public function admin()
+    {
+        return $this->belongsTo(User::class, 'admin_id');
+    }
+
+    public function scopeFromAi($query)
+    {
+        return $query->where('source', 'ai');
+    }
+
+    public function scopeFromPanel($query)
+    {
+        return $query->where('source', 'panel');
+    }
 }

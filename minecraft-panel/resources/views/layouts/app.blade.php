@@ -72,7 +72,7 @@
                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm
                {{ request()->is('audit') ? 'bg-accent text-white font-semibold' : 'text-muted hover:bg-white/5 hover:text-white' }}
                transition">
-                <span>📋</span> Audit Log
+                <span>📋</span> Admin Actions
             </a>
 
         <form method="POST" action="/logout">

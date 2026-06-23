@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\RconService;
-use App\Models\AuditLog;
+use App\Models\AdminAction;
 
 class MinecraftPanelController extends Controller
 {
@@ -31,7 +31,7 @@ class MinecraftPanelController extends Controller
 
             $response = $rcon->send($command);
 
-            AuditLog::create([
+            AdminAction::create([
                 'admin_id' => auth()->id(),
                 'action'   => 'raw',
                 'payload'  => ['command' => $command],
@@ -67,7 +67,7 @@ class MinecraftPanelController extends Controller
 
         $response = $rcon->send($command);
 
-        AuditLog::create([
+        AdminAction::create([
             'admin_id' => auth()->id(),
             'action'   => $type,
             'payload'  => $request->except(['_token']),

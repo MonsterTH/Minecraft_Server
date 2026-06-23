@@ -20,32 +20,61 @@ class MinecraftPanelController extends Controller
     {
         $type = $request->input('command_type');
 
+        // 🔥 NOVO: modo raw (console livre)
+        if ($type === 'raw') {
+
+            $command = $request->input('command');
+
+            if (!$command) {
+                return back()->with('error', 'Empty command.');
+            }
+
+            $response = $rcon->send($command);
+
+            AuditLog::create([
+                'admin_id' => auth()->id(),
+                'action'   => 'raw',
+                'payload'  => ['command' => $command],
+                'response' => $response,
+            ]);
+
+            return back()->with('response', $response);
+        }
+
+        // 🔐 allow-list (seguro)
         if (!array_key_exists($type, $this->allowedCommands)) {
             return back()->with('error', 'Command not allowed.');
         }
 
         $command = match($type) {
-            'broadcast'        => sprintf($this->allowedCommands[$type],
-                                    $request->input('message')),
-            'kick'             => sprintf($this->allowedCommands[$type],
-                                    $request->input('player'),
-                                    $request->input('reason', 'Kicked by admin')),
+            'broadcast' => sprintf(
+                $this->allowedCommands[$type],
+                $request->input('message')
+            ),
+
+            'kick' => sprintf(
+                $this->allowedCommands[$type],
+                $request->input('player'),
+                $request->input('reason', 'Kicked by admin')
+            ),
+
             'whitelist_add',
-            'whitelist_remove' => sprintf($this->allowedCommands[$type],
-                                    $request->input('player')),
+            'whitelist_remove' => sprintf(
+                $this->allowedCommands[$type],
+                $request->input('player')
+            ),
         };
 
         $response = $rcon->send($command);
 
-        // ✅ Audit log
         AuditLog::create([
-            'admin_id'   => auth()->id(),
-            'action'     => $type,
-            'payload'    => $request->except(['_token']),
-            'response'   => $response,
+            'admin_id' => auth()->id(),
+            'action'   => $type,
+            'payload'  => $request->except(['_token']),
+            'response' => $response,
         ]);
 
-        return back()->with('response', $response)->with('success', 'Command sent.');
+        return back()->with('response', $response);
     }
 
     public function refreshLogs()

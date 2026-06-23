@@ -11,7 +11,14 @@ class DashboardController extends Controller
     {
         $status = $query->getStatus();
 
-        $onlinePlayers = $this->getOnlinePlayers();
+        $onlinePlayers = ServerEvent::select('player_name')
+        ->whereIn('id', function ($q) {
+            $q->selectRaw('MAX(id)')
+                ->from('server_events')
+                ->groupBy('player_name');
+        })
+        ->where('event_type', 'join')
+        ->get();
 
         $joinsToday = ServerEvent::where('event_type', 'join')
             ->whereDate('event_time', today())
@@ -44,23 +51,31 @@ class DashboardController extends Controller
 
     public function getOnlinePlayers()
     {
-        // Para cada jogador, pega o último evento (join ou leave)
-        $latestEvents = ServerEvent::whereIn('event_type', ['join', 'leave'])
+        return ServerEvent::select('player_name')
             ->whereIn('id', function ($q) {
                 $q->selectRaw('MAX(id)')
                     ->from('server_events')
-                    ->whereIn('event_type', ['join', 'leave'])
                     ->groupBy('player_name');
             })
+            ->where('event_type', 'join')
             ->get();
-
-        // Só estão online os que o ÚLTIMO evento foi 'join'
-        return $latestEvents->where('event_type', 'join');
     }
 
     // players() e chat() para as rotas da sidebar
-    public function players()
+    public function players(MinecraftQueryService $query)
     {
+        $status = $query->getStatus();
+
+        $onlineNames = ServerEvent::select('player_name')
+            ->whereIn('id', function ($q) {
+                $q->selectRaw('MAX(id)')
+                    ->from('server_events')
+                    ->groupBy('player_name');
+            })
+            ->where('event_type', 'join')
+            ->pluck('player_name')
+            ->toArray();
+
         $players = ServerEvent::selectRaw('
                 player_name,
                 SUM(event_type = "join") as joins,
@@ -69,15 +84,11 @@ class DashboardController extends Controller
                 SUM(event_type = "advancement") as advancements
             ')
             ->groupBy('player_name')
-            ->get();
-
-        $onlinePlayers = ServerEvent::where('event_type', 'join')
-            ->whereNotIn('player_name', function ($q) {
-                $q->select('player_name')
-                ->from('server_events')
-                ->where('event_type', 'leave');
-            })
-            ->get();
+            ->get()
+            ->map(function ($p) use ($onlineNames) {
+                $p->is_online = in_array($p->player_name, $onlineNames);
+                return $p;
+            });
 
         $topPlayers = ServerEvent::selectRaw('player_name, COUNT(*) as total')
             ->groupBy('player_name')
@@ -93,10 +104,11 @@ class DashboardController extends Controller
 
         return view('players', [
             'players' => $players,
-            'onlinePlayers' => $onlinePlayers,
+            'onlineNames' => $onlineNames,
             'topPlayers' => $topPlayers,
             'joinsToday' => $joinsToday,
             'totalEvents' => $totalEvents,
+            'status' => $status,
         ]);
     }
 

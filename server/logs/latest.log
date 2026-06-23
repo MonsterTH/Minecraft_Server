@@ -64,3 +64,6 @@
 [14:04:27] [Server thread/INFO]: OakLogGuy fell from a high place
 [14:05:09] [Server thread/INFO]: OakLogGuy lost connection: Disconnected
 [14:05:09] [Server thread/INFO]: OakLogGuy left the game
+[14:18:14] [User Authenticator #1/INFO]: UUID of player OakLogGuy is 4bf41d67-fee6-4052-8e75-98252e31253f
+[14:18:16] [Server thread/INFO]: OakLogGuy joined the game
+[14:18:16] [Server thread/INFO]: OakLogGuy[/192.168.251.119:49285] logged in with entity id 1013 at ([minecraft:overworld]-16.674028079446092, 71.1875, 8.699999988079071)

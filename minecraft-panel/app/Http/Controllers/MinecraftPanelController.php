@@ -8,7 +8,7 @@ use App\Models\AdminAction;
 
 class MinecraftPanelController extends Controller
 {
-    // ✅ Allow-list de comandos seguros
+
     private array $allowedCommands = [
         'broadcast'       => 'say %s',
         'kick'            => 'kick %s %s',
@@ -20,7 +20,7 @@ class MinecraftPanelController extends Controller
     {
         $type = $request->input('command_type');
 
-        // 🔥 NOVO: modo raw (console livre)
+
         if ($type === 'raw') {
 
             $command = $request->input('command');
@@ -41,7 +41,7 @@ class MinecraftPanelController extends Controller
             return back()->with('response', $response);
         }
 
-        // 🔐 allow-list (seguro)
+
         if (!array_key_exists($type, $this->allowedCommands)) {
             return back()->with('error', 'Command not allowed.');
         }

@@ -6,6 +6,7 @@ services:
       - "8000:80"
     volumes:
       - .:/var/www
+      - /home/administrator/Work/Minecraft_S/server/logs:/var/www/storage/minecraft-logs:ro
     depends_on:
       - db
 

@@ -7,22 +7,24 @@ use App\Services\MinecraftQueryService;
 
 class DashboardController extends Controller
 {
+    // ✅ Método reutilizável para não repetir a query
+    private function onlinePlayersQuery()
+    {
+        return ServerEvent::select('player_name')
+            ->whereIn('id', function ($q) {
+                $q->selectRaw('MAX(id)')
+                    ->from('server_events')
+                    ->whereIn('event_type', ['join', 'leave'])
+                    ->groupBy('player_name');
+            })
+            ->where('event_type', 'join');
+    }
+
     public function index(MinecraftQueryService $query)
     {
         $status = $query->getStatus();
 
-        $onlinePlayers = ServerEvent::select('player_name')
-        ->whereIn('id', function ($q) {
-            $q->selectRaw('MAX(id)')
-                ->from('server_events')
-                ->groupBy('player_name');
-        })
-        ->where('event_type', 'join')
-        ->get();
-
-        $joinsToday = ServerEvent::where('event_type', 'join')
-            ->whereDate('event_time', today())
-            ->count();
+        $onlinePlayers = $this->onlinePlayersQuery()->get();
 
         $joinsToday = ServerEvent::where('event_type', 'join')
             ->whereDate('event_time', today())
@@ -34,7 +36,7 @@ class DashboardController extends Controller
             ->get();
 
         $topPlayers = ServerEvent::selectRaw('player_name, COUNT(*) as total')
-            ->where('event_type', 'chat') // ou "all activity weighted"
+            ->where('event_type', 'chat')
             ->groupBy('player_name')
             ->orderByDesc('total')
             ->limit(10)
@@ -51,28 +53,14 @@ class DashboardController extends Controller
 
     public function getOnlinePlayers()
     {
-        return ServerEvent::select('player_name')
-            ->whereIn('id', function ($q) {
-                $q->selectRaw('MAX(id)')
-                    ->from('server_events')
-                    ->groupBy('player_name');
-            })
-            ->where('event_type', 'join')
-            ->get();
+        return $this->onlinePlayersQuery()->get(); // ✅ fix
     }
 
-    // players() e chat() para as rotas da sidebar
     public function players(MinecraftQueryService $query)
     {
         $status = $query->getStatus();
 
-        $onlineNames = ServerEvent::select('player_name')
-            ->whereIn('id', function ($q) {
-                $q->selectRaw('MAX(id)')
-                    ->from('server_events')
-                    ->groupBy('player_name');
-            })
-            ->where('event_type', 'join')
+        $onlineNames = $this->onlinePlayersQuery() // ✅ fix
             ->pluck('player_name')
             ->toArray();
 
@@ -103,12 +91,12 @@ class DashboardController extends Controller
         $totalEvents = ServerEvent::count();
 
         return view('players', [
-            'players' => $players,
-            'onlineNames' => $onlineNames,
-            'topPlayers' => $topPlayers,
-            'joinsToday' => $joinsToday,
-            'totalEvents' => $totalEvents,
-            'status' => $status,
+            'players'      => $players,
+            'onlineNames'  => $onlineNames,
+            'topPlayers'   => $topPlayers,
+            'joinsToday'   => $joinsToday,
+            'totalEvents'  => $totalEvents,
+            'status'       => $status,
         ]);
     }
 
@@ -129,7 +117,7 @@ class DashboardController extends Controller
             ->count('player_name');
 
         return view('chat', [
-            'chatMessages' => $chatMessages,
+            'chatMessages'  => $chatMessages,
             'messagesToday' => $messagesToday,
             'activePlayers' => $activePlayers,
         ]);

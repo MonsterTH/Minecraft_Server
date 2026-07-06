@@ -1,110 +1,58 @@
-[13:59:29] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-2-24.04.2-Ubuntu; Ubuntu null) on Linux 6.17.0-35-generic (amd64)
-[13:59:29] [ServerMain/INFO]: [bootstrap] Loading Paper 26.1.2-72-ver/26.1.2@1a6b910 (2026-06-19T13:08:47Z) for Minecraft 26.1.2
-[13:59:30] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
-[13:59:30] [ServerMain/INFO]: [PluginInitializerManager] Initialized 1 plugin
-[13:59:30] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (1):
+[11:10:21] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.3+9-2-24.04.2-Ubuntu; Ubuntu null) on Linux 6.17.0-35-generic (amd64)
+[11:10:21] [ServerMain/INFO]: [bootstrap] Loading Paper 26.1.2-72-ver/26.1.2@1a6b910 (2026-06-19T13:08:47Z) for Minecraft 26.1.2
+[11:10:21] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[11:10:22] [ServerMain/INFO]: [PluginInitializerManager] Initialized 1 plugin
+[11:10:22] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (1):
  - MinecraftDataBridge (1.0)
-[13:59:40] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
-[13:59:44] [ServerMain/INFO]: Loaded 1515 recipes
-[13:59:44] [ServerMain/INFO]: Loaded 1617 advancements
-[13:59:44] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
-[13:59:45] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 775,8ms
-[13:59:45] [Server thread/INFO]: Starting minecraft server version 26.1.2
-[13:59:45] [Server thread/INFO]: Loading properties
-[13:59:45] [Server thread/INFO]: This server is running Paper version 26.1.2-72-ver/26.1.2@1a6b910 (2026-06-19T13:08:47Z) (Implementing API version 26.1.2.build.72-stable)
-[13:59:45] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
-[13:59:46] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[13:59:46] [Server thread/INFO]: Using 4 threads for Netty based IO
-[13:59:46] [Server thread/INFO]: [MoonriseCommon] Paper is using 1 worker threads, 1 I/O threads
-[13:59:47] [Server thread/INFO]: Default game type: SURVIVAL
-[13:59:47] [Server thread/INFO]: Generating keypair
-[13:59:47] [Server thread/INFO]: Starting Minecraft server on *:25565
-[13:59:47] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
-[13:59:47] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
-[13:59:47] [Server thread/INFO]: [MinecraftDataBridge] Loading server plugin MinecraftDataBridge v1.0
-[13:59:47] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[13:59:47] [Server thread/INFO]: Preparing level "world"
-[13:59:49] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
-[13:59:49] [Server thread/INFO]: Preparing spawn area: 100%
-[13:59:49] [Server thread/INFO]: Prepared spawn area in 2 ms
-[13:59:49] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
-[13:59:49] [Server thread/INFO]: Prepared spawn area in 1 ms
-[13:59:49] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_end'...
-[13:59:49] [Server thread/INFO]: Prepared spawn area in 1 ms
-[13:59:49] [Server thread/INFO]: Done preparing level "world" (1.073s)
-[13:59:49] [Server thread/INFO]: [MinecraftDataBridge] Enabling MinecraftDataBridge v1.0
-[13:59:49] [Server thread/INFO]: [MinecraftDataBridge] MinecraftDataBridge ativo
-[13:59:49] [Server thread/INFO]: [spark] Starting background profiler...
-[13:59:49] [Server thread/INFO]: Starting GS4 status listener
-[13:59:49] [Server thread/INFO]: Thread Query Listener started
-[13:59:49] [Server thread/INFO]: Starting remote control listener
-[13:59:49] [Query Listener #1/INFO]: Query running on 0.0.0.0:25565
-[13:59:49] [Server thread/INFO]: Thread RCON Listener started
-[13:59:49] [Server thread/INFO]: RCON running on 0.0.0.0:25575
-[13:59:49] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[13:59:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[13:59:50] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[13:59:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[13:59:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[13:59:50] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[13:59:50] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[13:59:50] [Server thread/INFO]: Running delayed init tasks
-[13:59:50] [Server thread/INFO]: Done (22.408s)! For help, type "help"
-[14:00:16] [User Authenticator #0/INFO]: UUID of player OakLogGuy is 4bf41d67-fee6-4052-8e75-98252e31253f
-[14:00:19] [Server thread/INFO]: OakLogGuy joined the game
-[14:00:20] [Server thread/INFO]: OakLogGuy[/192.168.251.119:53943] logged in with entity id 89 at ([minecraft:overworld]1.6132025451923457, 70.0, 2.4615022452247417)
-[14:01:55] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
-[14:01:55] [Server thread/INFO]: [Rcon: Set minecraft:overworld to 0 tick(s)]
-[14:01:55] [RCON Client /172.19.0.4 #3/INFO]: Thread RCON Client /172.19.0.4 shutting down
-[14:02:03] [Server thread/INFO]: OakLogGuy has made the advancement [Getting an Upgrade]
-[14:02:16] [Async Chat Thread - #2/INFO]: <OakLogGuy> Pica Reta
-[14:03:42] [RCON Listener #2/INFO]: Thread RCON Client /172.19.0.4 started
-[14:03:42] [Server thread/INFO]: [Rcon: Set minecraft:overworld to 0 tick(s)]
-[14:03:42] [RCON Client /172.19.0.4 #4/INFO]: Thread RCON Client /172.19.0.4 shutting down
-[14:04:27] [Server thread/INFO]: OakLogGuy fell from a high place
-[14:05:09] [Server thread/INFO]: OakLogGuy lost connection: Disconnected
-[14:05:09] [Server thread/INFO]: OakLogGuy left the game
-[14:18:14] [User Authenticator #1/INFO]: UUID of player OakLogGuy is 4bf41d67-fee6-4052-8e75-98252e31253f
-[14:18:16] [Server thread/INFO]: OakLogGuy joined the game
-[14:18:16] [Server thread/INFO]: OakLogGuy[/192.168.251.119:49285] logged in with entity id 1013 at ([minecraft:overworld]-16.674028079446092, 71.1875, 8.699999988079071)
-[14:20:48] [Server thread/INFO]: OakLogGuy fell from a high place
-[14:29:19] [Server thread/INFO]: OakLogGuy lost connection: Disconnected
-[14:29:19] [Server thread/INFO]: OakLogGuy left the game
-[14:29:39] [User Authenticator #2/INFO]: UUID of player OakLogGuy is 4bf41d67-fee6-4052-8e75-98252e31253f
-[14:29:40] [Server thread/INFO]: OakLogGuy joined the game
-[14:29:40] [Server thread/INFO]: OakLogGuy[/192.168.251.119:49560] logged in with entity id 2679 at ([minecraft:overworld]-16.38326080705974, 71.1875, 8.699999988079071)
-[14:30:04] [Server thread/INFO]: Stopping server
-[14:30:04] [Server thread/INFO]: [MinecraftDataBridge] Disabling MinecraftDataBridge v1.0
-[14:30:04] [Server thread/INFO]: Saving players
-[14:30:04] [Server thread/INFO]: OakLogGuy lost connection: Server closed
-[14:30:04] [Server thread/INFO]: OakLogGuy left the game
-[14:30:04] [Server thread/INFO]: Saving worlds
-[14:30:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[14:30:04] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:overworld'
-[14:30:04] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:overworld'
-[14:30:04] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:overworld'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Saved 625 block chunks, 625 entity chunks, 0 poi chunks in world 'minecraft:overworld' in 1,97s
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:overworld'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:overworld'
-[14:30:06] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_nether'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_nether'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_nether'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_nether' in 0,00s
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_nether'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_nether'
-[14:30:06] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'minecraft:the_end'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'minecraft:the_end'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'minecraft:the_end'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'minecraft:the_end' in 0,00s
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'minecraft:the_end'
-[14:30:06] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'minecraft:the_end'
-[14:30:06] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[14:30:06] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[14:30:06] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[14:30:06] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[14:30:06] [Server thread/INFO]: Waiting for all RegionFile I/O tasks to complete...
-[14:30:06] [Server thread/INFO]: All RegionFile I/O tasks to complete
-[14:30:06] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of worker pool for up to 60s...
-[14:30:06] [Server thread/INFO]: [MoonriseCommon] Awaiting termination of I/O pool for up to 60s...
+[11:10:32] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[11:10:37] [ServerMain/INFO]: Loaded 1515 recipes
+[11:10:37] [ServerMain/INFO]: Loaded 1617 advancements
+[11:10:37] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[11:10:38] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 757,7ms
+[11:10:38] [Server thread/INFO]: Starting minecraft server version 26.1.2
+[11:10:38] [Server thread/INFO]: Loading properties
+[11:10:38] [Server thread/INFO]: This server is running Paper version 26.1.2-72-ver/26.1.2@1a6b910 (2026-06-19T13:08:47Z) (Implementing API version 26.1.2.build.72-stable)
+[11:10:38] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[11:10:38] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[11:10:38] [Server thread/INFO]: Using 4 threads for Netty based IO
+[11:10:39] [Server thread/INFO]: [MoonriseCommon] Paper is using 1 worker threads, 1 I/O threads
+[11:10:40] [Server thread/INFO]: Default game type: SURVIVAL
+[11:10:40] [Server thread/INFO]: Generating keypair
+[11:10:40] [Server thread/INFO]: Starting Minecraft server on *:25565
+[11:10:40] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[11:10:40] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[11:10:40] [Server thread/INFO]: [MinecraftDataBridge] Loading server plugin MinecraftDataBridge v1.0
+[11:10:41] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[11:10:41] [Server thread/INFO]: Preparing level "world"
+[11:10:42] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:overworld'...
+[11:10:42] [Server thread/INFO]: Preparing spawn area: 100%
+[11:10:42] [Server thread/INFO]: Prepared spawn area in 1 ms
+[11:10:42] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_nether'...
+[11:10:42] [Server thread/INFO]: Preparing spawn area: 100%
+[11:10:42] [Server thread/INFO]: Prepared spawn area in 1 ms
+[11:10:42] [Server thread/INFO]: Loading 0 persistent chunks for level 'minecraft:the_end'...
+[11:10:42] [Server thread/INFO]: Prepared spawn area in 0 ms
+[11:10:42] [Server thread/INFO]: Done preparing level "world" (1.314s)
+[11:10:42] [Server thread/INFO]: [MinecraftDataBridge] Enabling MinecraftDataBridge v1.0
+[11:10:42] [Server thread/INFO]: [MinecraftDataBridge] MinecraftDataBridge ativo
+[11:10:42] [Server thread/INFO]: [spark] Starting background profiler...
+[11:10:43] [Server thread/INFO]: Starting GS4 status listener
+[11:10:43] [Server thread/INFO]: Thread Query Listener started
+[11:10:43] [Server thread/INFO]: Starting remote control listener
+[11:10:43] [Query Listener #1/INFO]: Query running on 0.0.0.0:25565
+[11:10:43] [Server thread/INFO]: Thread RCON Listener started
+[11:10:43] [Server thread/INFO]: RCON running on 0.0.0.0:25575
+[11:10:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[11:10:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[11:10:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[11:10:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[11:10:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[11:10:43] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[11:10:43] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[11:10:43] [Server thread/INFO]: Running delayed init tasks
+[11:10:43] [Server thread/INFO]: Done (24.872s)! For help, type "help"
+[11:10:56] [User Authenticator #0/INFO]: UUID of player MonsterTH06 is 6cbde8b4-4ab8-47fc-9190-581e7ce6b52a
+[11:11:02] [Server thread/INFO]: MonsterTH06 joined the game
+[11:11:03] [Server thread/INFO]: MonsterTH06[/192.168.251.113:50578] logged in with entity id 58 at ([minecraft:overworld]-3.599642525853588, 75.0, 5.338755381690559)
+[11:11:17] [Async Chat Thread - #1/INFO]: <MonsterTH06> t
+[11:12:05] [Server thread/INFO]: MonsterTH06 drowned

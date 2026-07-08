@@ -10,14 +10,13 @@ class Players extends Component
 {
     private function onlinePlayers()
     {
-        return ServerEvent::select('player_name')
+        return ServerEvent::select('player_name', 'event_type', 'id')
             ->whereIn('id', function ($q) {
                 $q->selectRaw('MAX(id)')
                     ->from('server_events')
-                    ->whereIn('event_type', ['join', 'leave'])
+                    ->whereIn('event_type', ['join', 'quit'])
                     ->groupBy('player_name');
-            })
-            ->where('event_type', 'join');
+            });
     }
 
     public function render(MinecraftQueryService $query)
@@ -25,6 +24,8 @@ class Players extends Component
         $status = $query->getStatus();
 
         $onlineNames = $this->onlinePlayers()
+            ->get()
+            ->filter(fn ($p) => $p->event_type === 'join')
             ->pluck('player_name')
             ->toArray();
 

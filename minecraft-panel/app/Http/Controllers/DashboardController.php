@@ -14,7 +14,7 @@ class DashboardController extends Controller
             ->whereIn('id', function ($q) {
                 $q->selectRaw('MAX(id)')
                     ->from('server_events')
-                    ->whereIn('event_type', ['join', 'leave'])
+                    ->whereIn('event_type', ['join', 'quit'])
                     ->groupBy('player_name');
             })
             ->where('event_type', 'join');

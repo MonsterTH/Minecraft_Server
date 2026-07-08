@@ -1,10 +1,10 @@
 package com.mcbridge;
-
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.*;
 import org.bukkit.event.player.PlayerAdvancementDoneEvent;
-
+import org.bukkit.event.entity.PlayerDeathEvent;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -60,5 +60,22 @@ public class MinecraftListener implements Listener {
                 e.getPlayer().getName() +
                 "\",\"advancement\":\"" +
                 e.getAdvancement().getKey().getKey() + "\"}");
+    }
+
+    @EventHandler
+    public void onPlayerDeath(PlayerDeathEvent event) {
+        Player player = event.getEntity();
+
+        String killer = player.getKiller() != null
+                ? player.getKiller().getName()
+                : "UNKNOWN";
+
+        String cause = player.getLastDamageCause() != null
+                ? player.getLastDamageCause().getCause().name()
+                : "UNKNOWN";
+
+        send("{\"event\":\"death\",\"player\":\"" + player.getName() +
+                "\",\"killer\":\"" + killer +
+                "\",\"cause\":\"" + cause + "\"}");
     }
 }
